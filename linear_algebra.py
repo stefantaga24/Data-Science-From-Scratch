@@ -1,6 +1,7 @@
 from matplotlib import pyplot as plt
 from collections import Counter
 from typing import *
+import math
 Vector = List[float]
 Matrix = List[List[float]]
 def add(v: Vector , w:Vector):
@@ -41,9 +42,4 @@ def get_row(A : Matrix , i:int):
 def get_column (A:Matrix , j:int):
     return [A[i][j] for i in range(len(A))]
 def make_matrix(num_rows : int , num_columns: int , entry_fn: Callable[[int,int], float]) -> Matrix:
-    return [[entry(i,j) for i in range(num_rows)] for j in range(num_columns)]
-assert add([1, 2, 3], [4, 5, 6]) == [5, 7, 9]
-assert subtract([1,2,3],[1,2,3]) == [0,0,0]
-assert vector_sum([[1, 2], [3, 4], [5, 6], [7, 8]]) == [16, 20]
-assert scalar_multiply(2, [1, 2, 3]) == [2, 4, 6]
-assert vector_mean([[1, 2], [3, 4], [5, 6]]) == [3, 4]
+    return [[entry_fn(i,j) for i in range(num_rows)] for j in range(num_columns)]
