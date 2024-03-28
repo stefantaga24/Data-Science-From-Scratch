@@ -4,12 +4,16 @@ from typing import *
 import math
 Vector = List[float]
 Matrix = List[List[float]]
+
 def add(v: Vector , w:Vector):
     assert(len(v) == len(w))
     return [v_i+w_i for v_i,w_i in zip(v,w)]
+
 def subtract(v:Vector ,w:Vector):
+
     assert(len(v) == len(w))
     return [v_i-w_i for v_i,w_i in zip(v,w)]
+
 def vector_sum(vectors: List[Vector]) -> Vector:
     assert(len(vectors))
     first_length = len(vectors[0])
@@ -22,9 +26,10 @@ def vector_mean(vectors: List[Vector]) -> Vector:
     assert(len(vectors))
     n = len(vectors)
     return scalar_multiply(1/n, vector_sum(vectors))
-def dot( a:Vector, b:Vector):
+def dot( a:Vector, b:Vector) -> float:
     assert (len(a)==len(b))
-    return (a_i*b_i for a_i,b_i in zip(a,b))
+    hello = (a_i*b_i for a_i,b_i in zip(a,b))
+    return sum(hello)
 def sum_squares(v : Vector) :
     return dot(v,v)
 def magnitude ( v: Vector):
