@@ -19,6 +19,7 @@ def vector_sum(vectors: List[Vector]) -> Vector:
     first_length = len(vectors[0])
     assert(first_length == len(vectors[i]) for i in range(0,len(vectors)))
     return [sum(vector[i] for vector in vectors) for i in range(first_length)]
+
 def scalar_multiply(c: float , v:Vector) -> Vector:
     assert(len(v))
     return [c*v[i] for i in range(len(v))]

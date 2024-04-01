@@ -38,7 +38,7 @@ def variance(xs: List[float]) -> float:
     assert len(xs) >= 2, "variance requires at least two elements"
     n = len(xs)
     deviations = de_mean(xs)
-    return LA.sum_of_squares(deviations) / (n - 1)
+    return LA.sum_squares(deviations) / (n - 1)
 def standard_deviation(xs:List[float] ) -> float:
     return math.sqrt(variance(xs))
 def interquartile_range(xs: List[float]) -> float:
@@ -57,3 +57,4 @@ def correlation (xs: List[float], ys:List[float]) -> float:
         return covariance(xs,ys) / stdev_xs/stdev_ys
     else:
         return 0
+     

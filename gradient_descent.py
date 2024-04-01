@@ -56,7 +56,7 @@ theta = [random.uniform(-1,1) , random.uniform(-1,1)]
 
 learning_rate = 0.0001
 
-for epoch in range(500):
+for epoch in range(0):
     np.random.shuffle(inputs)
     for x,y in inputs:
         grad = linear_gradient(x,y,theta)
